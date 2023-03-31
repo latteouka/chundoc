@@ -1,0 +1,16 @@
+{
+  "index": "Intro",
+  "design": "Design Pattern",
+  "starter": "Starter",
+  "palettes": "Palettes",
+  "utils": "Utils",
+  "---": {
+    "type": "separator"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://www.instagram.com/latteouka/",
+    "newWindow": true
+  }
+}

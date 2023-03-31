@@ -1,0 +1,51 @@
+.container {
+  margin: 1rem 0;
+}
+
+.palette {
+  margin: 1rem 0;
+}
+
+.title {
+  display: flex;
+  font-weight: 700;
+}
+
+.alert {
+  font-weight: 400;
+  margin: 0 1rem;
+  opacity: 0;
+}
+
+.colors {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  display: flex;
+  width: 100%;
+  height: 4rem;
+}
+
+.color {
+  font-size: clamp(0.7rem, 0.7rem + 0.5vw, 1rem);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+
+  &:hover {
+    font-weight: 700;
+    animation: bright-flash 0.5s linear;
+  }
+}
+
+@keyframes bright-flash {
+  0% {
+    filter: brightness(1.2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
