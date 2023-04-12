@@ -31,7 +31,7 @@ console.log(b());
 
 ## Arrow Function
 
-上述的例子如果把 b 改成 arrow function，因為 arrow function 並不會被 Hoisting，所以呼叫的當下 b 是作為 variables 被 Hoisting 設為 undefined，若在指派之後才 console.log 就沒有錯誤了。
+上述的例子如果把 b 改成 arrow function，因為 arrow function 並不會被 Hoist，所以呼叫的當下 b 是作為 variables 被 Hoist 設為 undefined，若在指派之後才 console.log 就沒有錯誤了。
 
 ```typescript
 console.log(b());

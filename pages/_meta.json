@@ -3,10 +3,8 @@
   "design": "Design Pattern",
   "starter": "Starter",
   "palettes": "Palettes",
+  "voiceactor": "声優",
   "utils": "Utils",
-  "---": {
-    "type": "separator"
-  },
   "contact": {
     "title": "Contact ↗",
     "type": "page",

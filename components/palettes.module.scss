@@ -35,6 +35,12 @@
   align-items: center;
   transition: all 0.4s;
 
+  &:after {
+    color: #eee;
+    content: attr(data-color);
+    mix-blend-mode: difference;
+  }
+
   &:hover {
     font-weight: 700;
     animation: bright-flash 0.5s linear;
