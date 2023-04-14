@@ -77,3 +77,22 @@ const useScroll = () => {
 };
 export default useScroll;
 ```
+
+### 製造 wheel event
+
+```typescript
+// initEvent已經deprecated
+function before() {
+  const wheelEvt = document.createEvent("MouseEvents") as any;
+  wheelEvt.initEvent("wheel", true, true);
+  wheelEvt.deltaY = -170;
+  document.dispatchEvent(wheelEvt);
+}
+
+function next() {
+  const wheelEvt = document.createEvent("MouseEvents") as any;
+  wheelEvt.initEvent("wheel", true, true);
+  wheelEvt.deltaY = 170;
+  document.dispatchEvent(wheelEvt);
+}
+```

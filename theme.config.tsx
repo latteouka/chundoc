@@ -28,9 +28,12 @@ const config: DocsThemeConfig = {
   // chat: {
   //   link: "https://discord.com",
   // },
-  docsRepositoryBase: "https://github.com/latteouka",
+  docsRepositoryBase: "https://github.com/latteouka/chundoc/tree/main/",
   footer: {
     component: <div />,
+  },
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
   },
 };
 

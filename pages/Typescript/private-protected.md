@@ -1,4 +1,4 @@
-# [ts] public, private, protected
+# public, private, protected
 
 ## Public
 

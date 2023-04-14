@@ -1,4 +1,4 @@
-# [ts] getter, setter
+# getter, setter
 
 getter, setter 是 js 本身的功能。
 

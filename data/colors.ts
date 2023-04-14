@@ -1,5 +1,15 @@
 const palettes = [
   {
+    title: "秋",
+    colors: [
+      { color: "#faf7ed", per: 60 },
+      { color: "#A80047", per: 10 },
+      { color: "#E63D24", per: 10 },
+      { color: "#A89457", per: 10 },
+      { color: "#1B2562", per: 10 },
+    ],
+  },
+  {
     title: "この本を盗むもの",
     colors: [
       { color: "#383040", per: 20 },

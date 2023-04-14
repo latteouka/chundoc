@@ -1,4 +1,4 @@
-沒辦法直接去改變Pseudo元素的內容，但可以用變數的方式去喬。
+沒辦法直接去改變 Pseudo 元素的內容，但可以用變數的方式去喬。
 
 ```css {6} filename="something.scss"
 .nav-title {
@@ -28,3 +28,14 @@ titles.forEach((title: any) => {
 });
 ```
 
+BTW, :root
+
+```scss
+:root {
+  --your-variable: #fff;
+}
+```
+
+```typescript {} filename="root.ts"
+document.documentElement.style.setProperty("--your-variable", "#YOURCOLOR");
+```

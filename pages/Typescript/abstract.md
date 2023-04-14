@@ -1,4 +1,4 @@
-# [ts] abstract
+# abstract
 
 表示這個 class 就像是一個抽象的藍圖，應被繼承產生新的 class。
 通常 abstract class 中也會設有 abstract properties 跟 methods，建立 subclass 時就必須要去實作這些要求。

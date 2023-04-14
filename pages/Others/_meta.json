@@ -3,5 +3,6 @@
   "Prisma": "Prisma",
   "ReactNative": "React Native",
   "WebRTC": "WebRTC",
-  "ffmpeg": "ffmpeg"
+  "ffmpeg": "ffmpeg",
+  "voiceactor": "声優"
 }

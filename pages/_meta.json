@@ -1,14 +1,13 @@
 {
   "index": "Intro",
-  "design": "Design Pattern",
   "starter": "Starter",
   "palettes": "Palettes",
-  "voiceactor": "声優",
   "utils": "Utils",
   "contact": {
     "title": "Contact ↗",
     "type": "page",
     "href": "https://www.instagram.com/latteouka/",
     "newWindow": true
-  }
+  },
+  "design": "Design Pattern"
 }
