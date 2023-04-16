@@ -1,7 +1,27 @@
 import Palettes from '../components/palettes'
 
-#### Click to copy HEX
-
-#### Press any key and click to copy glsl vec3
+直接點複製Hex碼，隨便按個按鈕再點可以複製Vec3
 
 <Palettes />
+
+## Hex to GLSL Vector3
+
+```typescript filename="hexToGL.ts" copy
+const hexToGL = (hex: any) => {
+  let alpha = false,
+    h = hex.slice(hex.startsWith("#") ? 1 : 0);
+  if (h.length === 3) h = [...h].map((x) => x + x).join("");
+  else if (h.length === 8) alpha = true;
+  h = parseInt(h, 16);
+  const r = ((h >>> (alpha ? 24 : 16)) / 255).toFixed(3);
+  const g = (
+    ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) /
+    255
+  ).toFixed(3);
+  const b = (
+    ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) /
+    255
+  ).toFixed(3);
+  return "vec3" + "(" + r + ", " + g + ", " + b + ")";
+};
+```

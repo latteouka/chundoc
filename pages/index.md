@@ -6,11 +6,13 @@ Hello, I am Yi Chun.
 
 初めまして、ちゅんです！
 
+可以從右上的 Link 到 Instagram 聯繫我。 or [Email](mailto:oukalatte@gmail.com)
+
 ## Stacks
 
 記下來的東西大概跟這些有關，比較偏前端，是個充滿小細節與こだわり的世界。
 
-比較像是個人的 CheatSheet，都是蠻常用的東西。
+Doc 比較像是個人的 CheatSheet，都是蠻常用的東西。比較長的東西會放在 Blog 區。
 
 - JS/TS
 - Node.js

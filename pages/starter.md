@@ -10,55 +10,60 @@
 
 ## next.js
 
-```bash
+```bash copy
 npx create-next-app@latest --ts
-# or
+```
+
+```bash copy
 yarn create next-app --typescript
-# or
-pnpm create next-app --ts
 ```
 
 ## t3
 
-```bash
+```bash copy
 npm create t3-app@latest
+```
 
+```bash copy
 yarn create t3-app
-
-pnpm create t3-app@latest
 ```
 
 ## Vite
 
-```bash
+```bash copy
 npm create vite@latest
+```
 
+```bash copy
 yarn create vite
-
-pnpm create vite
-
 ```
 
 ## React-Three-Next starter
 
 [pmndrs/react-three-next](https://github.com/pmndrs/react-three-next)
 
-```bash
+```bash copy
 yarn create r3f-app next my-app -ts
+```
 
+```bash copy
 npx create-r3f-app next my-app -ts
 ```
 
-```bash
-// three
-yarn add three @types/three @react-three/fiber @react-three/drei
+three
 
-// animation
+```bash copy
+yarn add three @types/three @react-three/fiber @react-three/drei
+```
+
+animation
+
+```bash copy
 yarn add @use-gesture/react @react-spring/three
 ```
 
 ## Nodejs Typescript
 
-```bash
+```bash copy
 npx typescript-express-starter "project name"
 ```

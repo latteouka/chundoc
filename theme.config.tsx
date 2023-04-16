@@ -35,6 +35,8 @@ const config: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: 1,
   },
+  navigation: false,
+  faviconGlyph: "📚",
 };
 
 export default config;

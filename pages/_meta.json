@@ -1,13 +1,32 @@
 {
   "index": "Intro",
-  "starter": "Starter",
+  "blog": "Blog",
+  "blogs": {
+    "title": "Blog",
+    "type": "page",
+    "display": "hidden"
+  },
   "palettes": "Palettes",
-  "utils": "Utils",
   "contact": {
     "title": "Contact ↗",
     "type": "page",
     "href": "https://www.instagram.com/latteouka/",
     "newWindow": true
   },
-  "design": "Design Pattern"
+  "WebDesign": "Web Design",
+  "WebGL": "WebGL",
+  "Javascript": "Javascript",
+  "Typescript": "Typescript",
+  "React": "React.js",
+  "Next": "Next.js",
+  "Others": "Other",
+  "design": "Design Pattern",
+  "starter": "Starter",
+  "utils": "Utils",
+  "voiceactor": "声優",
+  "instagram": {
+    "title": "My Instagram",
+    "href": "https://www.instagram.com/latteouka/",
+    "newWindow": true
+  }
 }
