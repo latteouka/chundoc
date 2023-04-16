@@ -7,12 +7,6 @@
     "display": "hidden"
   },
   "palettes": "Palettes",
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://www.instagram.com/latteouka/",
-    "newWindow": true
-  },
   "WebDesign": "Web Design",
   "WebGL": "WebGL",
   "Javascript": "Javascript",
@@ -23,10 +17,5 @@
   "design": "Design Pattern",
   "starter": "Starter",
   "utils": "Utils",
-  "voiceactor": "声優",
-  "instagram": {
-    "title": "My Instagram",
-    "href": "https://www.instagram.com/latteouka/",
-    "newWindow": true
-  }
+  "voiceactor": "声優"
 }
