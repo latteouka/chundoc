@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "Yi Chun's DOC",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Yi Chun's DOC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,12 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/shuding/nextra-docs-template.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "latteouka",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/latteouka/chundoc"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/latteouka/chundoc",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.4",
     "gsap": "^3.11.5",

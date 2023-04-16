@@ -1,13 +1,28 @@
 ## Hide scrollbar
 
 ```scss
+// for copy-paste
 html {
   scrollbar-width: none !important;
+  -ms-overflow-style: none;
 }
 
 html body::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
+  display: none;
+}
+
+// browser
+html {
+  // firefox
+  scrollbar-width: none !important;
+
+  // IE, Edge
+  -ms-overflow-style: none;
+}
+
+html body::-webkit-scrollbar {
+  // safari
+  display: none;
 }
 ```
 
