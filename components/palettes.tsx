@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import palettes from "../data/colors";
 import style from "./palettes.module.scss";
 import gsap from "gsap";
@@ -127,4 +127,26 @@ const hexToGL = (hex: any) => {
     255
   ).toFixed(3);
   return "vec3" + "(" + r + ", " + g + ", " + b + ")";
+};
+
+export const HexChange = () => {
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
+  useEffect(() => {
+    const gl = hexToGL(input);
+    setResult(gl);
+  }, [input]);
+  return (
+    <div className={style.hexchange}>
+      <div className={style.input}>
+        Hex
+        <input
+          type="text"
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+        />
+      </div>
+      <div className={style.result}>➞ {result}</div>
+    </div>
+  );
 };

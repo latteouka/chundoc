@@ -1,6 +1,7 @@
 {
   "index": "Intro",
   "blog": "Blog",
+  "todo": "Todos",
   "blogs": {
     "title": "Blog",
     "type": "page",

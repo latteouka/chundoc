@@ -1,0 +1,112 @@
+import Image from "next/image";
+
+## 目標
+
+拿到自己的 Spotify 現在正在播放的歌曲資訊。
+
+## Authorization Code Flow
+
+下圖是 Spotify for Developers 提供的[Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/)，正常來說使用這個流程是為了讓我們做的 App 可以讓使用者登入，然後獲取他的 Access Token 以後，就能拿他的身份使用 API，進一步把獲取的資訊用在 App 上，但現在我要的是能持續用我自己的身份來使用 API，所以我需要拿到的是步驟二返還回來的 Refresh Token，之後我就能用這個 Refresh Token 要求到最新沒過期的 Access Token 來使用 API。
+
+<Image
+  alt={`spotify auth flow`}
+  src={`/img/spotify-auth-flow.png`}
+  width={672}
+  height={610}
+  priority
+/>
+
+## 新增 APP
+
+先來到 Spotify for Developers 的[Dashboard](https://developer.spotify.com/dashboard/)。
+
+- 登入後 Create an App。
+- 點選 Show Client Secret。
+- 把 Client ID 跟 Secret 記下來等等會用到。
+- 在 Edit Settings 裡面的 redirect URI 加入 `http://localhost:3000`。
+
+## 進行驗證
+
+跟 Spotify 用下列的網址做驗證要求，記得把`CLIENT_ID`替換成你剛剛記下的，另外 Scope 這邊只有要求`user-read-currently-playing`而已，如果你之後有別的需求記得重新驗證。
+
+```bash
+https://accounts.spotify.com/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http
+%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing
+```
+
+登入成功後你會發現頁面被轉回到`http://localhost:3000/`，但網址後面多了一串的 code 內容，請把他存下來。其實應該先請你準備好下一步的，因為這個 code 不趕快拿來用的話會過期 😆
+
+```bash
+http://localhost:3000/?code=AQAetqp-KRnpLn15riDsCuVDbr36Gkf3nbNyStaQmPihWdU16yRnFwgdW8cN5B7n_2O5EieihFLiBXBJF4kBcHXtzmlOok2WEYt2VbciSdNeAUKHAjYh_Yfx_pLB3UHL6pt3M4WN2PeqcF3XQvqdxF1Auo_29HZbvU0DlAbc-vFcPLcALZg68YtgroD6BRnJUIDazscx
+```
+
+## refresh_token
+
+登入成功後，再來就是要正式做步驟 2 了，從圖片中可以看到需要`client_id`、`client_secret`、`grant_type`、剛剛取得的`code`及`redirect_uri`，詳細要 POST 的內容可以看[這裡](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/)的**Request Access Token**。
+
+```bash
+curl -H "Authorization: Basic <base64 encoded client_id:client_secret>"
+-d grant_type=authorization_code -d code=<code> -d redirect_uri=http%3A
+%2F%2Flocalhost:3000 https://accounts.spotify.com/api/token
+```
+
+上面 client_id 及 client_secret 合併的 base64 encode 可以用這個[線上工具](https://www.base64encode.org/)來幫你做，要注意左右括號要在貼上後拿掉喔！
+
+curl 後你就會得到含有 refresh_token 的 json，這個 refresh_token 沒有主動去 revoke 的話是不會過期的，存起來以後都能拿來用來要求新的 access_token，你也可以從 json 裡面發現要求回來的 access_token 是一個小時會過期。
+
+```js
+{
+  "access_token":"xxxxx",
+  "token_type":"Bearer",
+  "expires_in":3600,
+  "refresh_token":"xxxxx",
+  "scope":"user-read-currently-playing"
+}
+```
+
+## 使用 token
+
+萬一之後 access_token 到期了，可以用 Spotify 提供的[Request a refreshed Access Token](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/)重新要一個。
+
+```js
+const client_id = process.env.SPOTIFY_CLIENT_ID;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+
+const TOKEN_URL = `https://accounts.spotify.com/api/token`;
+
+//用Buffer.from()來把String轉為二進制的緩衝區，就能再轉換成別的編碼
+const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
+
+const getAccessToken = async () => {
+  const response = await fetch(TOKEN_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Basic ${basic}`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      refresh_token,
+    }),
+  });
+
+  return response.json();
+};
+```
+
+在 token 的有效期間內，就能跟 API 要我們正在收聽的歌曲囉。但因為 refresh_token 根本不會到期，所以每次直接就要一個新的來用啦。
+
+```js
+const NOW_PLAYING_URL = `https://api.spotify.com/v1/me/player/currently-playing`;
+
+const getNowPlaying = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch(NOW_PLAYING_URL, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+```

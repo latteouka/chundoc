@@ -1,3 +1,6 @@
+$tag-color: #eff6ff;
+$duration: 0.4s;
+
 .container {
   font-size: 1rem;
   line-height: 1.75;
@@ -7,15 +10,42 @@
 .box {
   margin: 1rem 0.2rem;
   padding: 0.5rem 1rem;
-  // border: 1px solid rgba(113, 128, 150, 0.6);
   border-radius: 1rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    transition: transform $duration;
+    width: 2px;
+    height: 80%;
+    background-color: #64748b;
+  }
+
+  &::before {
+    left: 0px;
+    transform-origin: bottom;
+  }
+
+  &::after {
+    right: 0px;
+    transform-origin: top;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: translateY(-50%) scale(1);
+  }
 }
 
 .title {
+  display: inline-block;
   font-weight: 700;
   font-size: 1.25em;
   margin-bottom: 0.1em;
-  line-height: 1.6;
 }
 
 .desc {
@@ -25,4 +55,21 @@
 
 .date {
   color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.tags {
+  font-size: 0.8rem;
+  display: flex;
+  margin-bottom: 0.4em;
+
+  .tag:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+}
+
+.tag {
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+  background-color: $tag-color;
 }

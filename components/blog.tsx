@@ -19,6 +19,11 @@ const Box = ({ blog }: { blog: BlogType }) => {
       <div className={style.box}>
         <div className={style.title}>{blog.title}</div>
         <div className={style.desc}>{blog.desc}</div>
+        <div className={style.tags}>
+          {blog.tags.map((tag) => {
+            return <div className={style.tag}>{tag}</div>;
+          })}
+        </div>
         <div className={style.date}>{blog.date}</div>
       </div>
     </Link>
