@@ -10,7 +10,7 @@ const blog: BlogType[] = [
   {
     title: "Page Transition in Next.js with GSAP",
     desc: "不用其他函式庫，並結合three.js元素進行頁面轉場。",
-    date: "Mar 19 2022",
+    date: "Apr 3 2023",
     tags: ["next", "gsap", "webgl"],
     path: "/blogs/transition-next",
   },

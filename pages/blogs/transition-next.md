@@ -4,9 +4,18 @@
 
 [Demo](https://transition.chundev.com/)
 
+[Github](https://github.com/latteouka/three-transition-next)
+
 很棒吧～轉場的時候可以繼續玩 shader！
 
+如果只是單純操作 CSS 的話或許可以用 react-transition-group 或是 framer motion 的 AnimatePresence。
+但因為想要同時連 threejs 元素一起操作，覺得反而自己好好地設定時間軸更清楚。
+
+另外 react-transition-group 看原始碼也是包一個 context 用類似的方式。
+
 ## Gransition (我自己亂取的)
+
+[Gransition](https://www.npmjs.com/package/@chundev/gransition?activeTab=readme)
 
 主要是參考[這個](https://tweenpages.vercel.app/docs)實作方式，但有遇到一些問題需要調整。
 
@@ -52,9 +61,12 @@ export { TransitionContext, TransitionProvider };
 
 再來就是處理實際 Page Transition 的 HOC。
 
-跟原本參考的有出入的地方是，
+~~跟原本參考的有出入的地方是，
 dependencies 用 `router.asPath` 而不是 `children`，
-這樣可以避免明明超連結路徑一樣卻還是觸發動畫，可以依個人需求調整。
+這樣可以避免明明超連結路徑一樣卻還是觸發動畫，可以依個人需求調整。~~
+
+我沒辦法把 useRouter 包到 npm package 中，所以基本款還是用 children。
+所以要注意比如說不要提供同 path 的連結在頁面中。
 
 另外原本的程式碼中 outro 播放完後是用`timeline.seek(0).pause().clear()`，
 萬萬不可`seek(0)`東西都飛來飛去惹，
@@ -72,12 +84,11 @@ export default function TransitionLayout({
   const [displayChildren, setDisplayChildren] = useState(children);
   const router = useRouter();
   const timeline = useTimeline();
-  const el = useRef(null);
 
-  // 若網址有變就檢查children是否一樣
   useIsomorphicLayoutEffect(() => {
-    // 不一樣，所以要播放timeline中的outro
+    // 檢查children是否一樣
     if (children !== displayChildren) {
+      // 不一樣，所以要播放timeline中的outro
       if (timeline.duration() === 0) {
         // 但timeline長度是0耶，表示這頁沒有設定outro動畫，那就直接轉頁
         setDisplayChildren(children);
@@ -92,8 +103,8 @@ export default function TransitionLayout({
         });
       }
     }
-  }, [router.asPath]);
-  return <div ref={el}>{displayChildren}</div>;
+  }, [children]);
+  return <div>{displayChildren}</div>;
 }
 ```
 

@@ -7,7 +7,7 @@ const useLenis = () => {
 
   useEffect(() => {
     lenis.current = new Lenis({
-      duration: 1,
+      duration: 0.7,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothTouch: true,
     });
