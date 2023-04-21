@@ -25,7 +25,7 @@
 
 ~~其實 setTimeline 根本也不會用到，所以這個 Context 並不會因為 state 更新而出現 re-render 地獄。~~
 
-因為不會用到所以把 timeline 用 useMemo 處理了。
+因為不會用到所以拿掉了。
 
 ```tsx {13, 18} filename="TransitionContext.tsx"
 import { useState, createContext } from "react";
@@ -40,7 +40,7 @@ const TransitionContext = createContext<TransitionContextProps>({
 });
 
 const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
-  const timeline = useMemo(() => gsap.timeline({ paused: true }), []);
+  const timeline = useState(gsap.timeline({ paused: true }));
 
   return (
     <TransitionContext.Provider
