@@ -13,9 +13,9 @@
 
 另外 react-transition-group 看原始碼也是包一個 context 用類似的方式。
 
-## Gransition (我自己亂取的)
+## Gtranz
 
-[Gransition](https://www.npmjs.com/package/@chundev/gransition?activeTab=readme)
+[Gtranz](https://www.npmjs.com/package/@chundev/gtranz?activeTab=readme)
 
 主要是參考[這個](https://tweenpages.vercel.app/docs)實作方式，但有遇到一些問題需要調整。
 
@@ -23,32 +23,29 @@
 
 我們用 React Context 來共享同一個 timeline，這個 timeline 是我們用來做 Outro 動畫用。
 
-其實 setTimeline 根本也不會用到，所以這個 Context 並不會因為 state 更新而出現 re-render 地獄。
+~~其實 setTimeline 根本也不會用到，所以這個 Context 並不會因為 state 更新而出現 re-render 地獄。~~
 
-```tsx {15-18, 22} filename="TransitionContext.tsx"
+因為不會用到所以把 timeline 用 useMemo 處理了。
+
+```tsx {13, 18} filename="TransitionContext.tsx"
 import { useState, createContext } from "react";
 import gsap from "gsap";
 
 interface TransitionContextProps {
   timeline: gsap.core.Timeline | null;
-  setTimeline: any;
 }
 
 const TransitionContext = createContext<TransitionContextProps>({
   timeline: null,
-  setTimeline: null,
 });
 
 const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
-  const [timeline, setTimeline] = useState(() =>
-    gsap.timeline({ paused: true })
-  );
+  const timeline = useMemo(() => gsap.timeline({ paused: true }), []);
 
   return (
     <TransitionContext.Provider
       value={{
         timeline,
-        setTimeline,
       }}
     >
       {children}
@@ -73,7 +70,7 @@ dependencies 用 `router.asPath` 而不是 `children`，
 這個我因為相信他至少邏輯部分沒問題所以都沒檢查，除錯除了超久。
 
 ```tsx
-import { useTimeline, useIsomorphicLayoutEffect } from "./Gransition";
+import { useTimeline, useIsomorphicLayoutEffect } from "./Gtranz";
 import { useState, useRef } from "react";
 
 export default function TransitionLayout({
@@ -110,9 +107,9 @@ export default function TransitionLayout({
 
 別忘了把上面的取一個中二的名字包起來後，把`_app.tsx`也包起來。
 
-```tsx "Gransition.tsx
+```tsx "Gtranz.tsx
 // Provider
-const Gransition = ({ children }: { children: React.ReactNode }) => {
+const Gtranz = ({ children }: { children: React.ReactNode }) => {
   return (
     <TransitionProvider>
       <TransitionLayout>{children}</TransitionLayout>
@@ -122,7 +119,7 @@ const Gransition = ({ children }: { children: React.ReactNode }) => {
 ```
 
 ```tsx {1, 10}
-<Gransition>
+<Gtranz>
   <main className={font.className}>
     <Head>
       <title>Next.js Transition</title>
@@ -131,7 +128,7 @@ const Gransition = ({ children }: { children: React.ReactNode }) => {
     <Component {...pageProps} />
     <Loading />
   </main>
-</Gransition>
+</Gtranz>
 ```
 
 ## useIsomorphicLayoutEffect
@@ -179,7 +176,7 @@ useIsomorphicLayoutEffect(() => {
   };
 }, []);
 
-// out
+// outro
 // 離場把字弄不見
 useIsomorphicLayoutEffect(() => {
   timeline.add(
@@ -299,6 +296,7 @@ useIsomorphicLayoutEffect(() => {
   });
 
   return () => {
+    document.removeEventListener("setupAnimation", setupOutro);
     ctx.revert();
   };
 }, []);
