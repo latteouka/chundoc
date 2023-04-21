@@ -8,6 +8,13 @@ export interface BlogType {
 
 const blog: BlogType[] = [
   {
+    title: "Publish NPM Package with tsup",
+    desc: "把自己常用的東西模組化吧。",
+    date: "Apr 18 2023",
+    tags: ["npm", "tsup"],
+    path: "/blogs/npm-publish-tsup",
+  },
+  {
     title: "Page Transition in Next.js with GSAP",
     desc: "不用其他函式庫，並結合three.js元素進行頁面轉場。",
     date: "Apr 3 2023",
