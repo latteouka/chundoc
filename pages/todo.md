@@ -1,7 +1,5 @@
 ## Todo List
 
-- npm gransition
-
 - Trail, Draw  
   https://qiita.com/ukonpower  
   https://github.com/ukonpower/three-template-ts  
@@ -14,3 +12,5 @@
   https://zenn.dev/junni/articles/bb71f44c89cb77?redirected=1
 
 ## History
+
+- npm gtranz

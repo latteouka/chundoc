@@ -8,6 +8,13 @@ export interface BlogType {
 
 const blog: BlogType[] = [
   {
+    title: "Github CI",
+    desc: "Github負責typecheck, lint。部署方則取消。",
+    date: "Apr 22 2023",
+    tags: ["github", "ci"],
+    path: "/blogs/github-ci",
+  },
+  {
     title: "Publish NPM Package with tsup",
     desc: "把自己常用的東西模組化吧。",
     date: "Apr 18 2023",

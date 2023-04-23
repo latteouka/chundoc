@@ -23,6 +23,19 @@ npx prisma init
 
 ```js:prisma/schema.prisma
 generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+    relationMode = "prisma"
+}
+
+```
+
+```js:prisma/schema.prisma
+generator client {
   provider = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }

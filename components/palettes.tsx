@@ -3,6 +3,7 @@ import palettes from "../data/colors";
 import style from "./palettes.module.scss";
 import gsap from "gsap";
 import { useKeyStore } from "../store/keyStore";
+import { toast } from "react-hot-toast";
 
 const Palletes = () => {
   const { setIsPress } = useKeyStore();
@@ -56,41 +57,17 @@ const Palette = ({ title, colors }: Props) => {
       // vec3
       const result = hexToGL(copyText);
       navigator.clipboard.writeText(result);
+      toast.success(`Copied! ${result}`);
     } else {
       // hex
       navigator.clipboard.writeText(copyText);
+      toast.success(`Copied! ${copyText}`);
     }
-  }
-
-  function alertAnimation(color: string) {
-    gsap.set(alert.current, {
-      color,
-    });
-    gsap.to(alert.current, {
-      opacity: 1,
-      duration: 0.4,
-      onComplete: () => {
-        gsap.to(alert.current, {
-          opacity: 0,
-          delay: 0.3,
-          duration: 0.3,
-        });
-      },
-    });
   }
 
   return (
     <div className={style.palette}>
-      <div className={style.title}>
-        {title}
-        <div
-          className={style.alert}
-          style={{ color: colors[0].color }}
-          ref={alert}
-        >
-          Copied!
-        </div>
-      </div>
+      <div className={style.title}>{title}</div>
       <div className={style.colors}>
         {colors.map((color, index) => {
           return (
@@ -101,7 +78,6 @@ const Palette = ({ title, colors }: Props) => {
               data-color={color.color}
               onClick={() => {
                 copy(color.color);
-                alertAnimation(color.color);
               }}
             ></div>
           );

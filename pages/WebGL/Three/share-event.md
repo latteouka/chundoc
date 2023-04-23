@@ -1,12 +1,14 @@
 # dom 與 canvas 同時接收 event
 
+**重點是 share same parent**
+
 Canvas 有可能存在於 dom 的前方或後方，如果在前面的話會擋住後方的內容。
 
 所以指定 Canvas 的 eventSource 至 dom 與 canvas 的 parent div，可讓兩者都接收到 Event
 
 但又為避免 Canvas 擋住 dom 接收，Canvas css 設為 `pointer-event: none;`
 
-```typescript title="App.tsx"
+```typescript filename="App.tsx"
 export default function App() {
   const parentRef = useRef<HTMLDivElement | null>(null);
   return (
@@ -21,7 +23,7 @@ export default function App() {
 }
 ```
 
-```typescript title="Scene.tsx"
+```typescript filename="Scene.tsx"
 export default function App({ ...props }) {
   return (
     <Canvas {...props} className="canvas">
@@ -31,7 +33,7 @@ export default function App({ ...props }) {
 }
 ```
 
-```css title="App.css
+```css filename="App.css
 .App {
   width: 100vw;
   height: 100vh;

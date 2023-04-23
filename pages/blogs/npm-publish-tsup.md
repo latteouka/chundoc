@@ -7,8 +7,8 @@
 ```bash
 npm publish
 
-// 如果跳出有關public的錯誤
-// 因為預設scope是private，但免費帳號又只能用public
+# 如果跳出有關public的錯誤
+# 因為預設scope是private，但免費帳號又只能用public
 npm publish --access public
 ```
 
@@ -19,6 +19,8 @@ npm publish --access public
 tsc 打包的話都是看 tsconfig 的參數。
 
 後來我去觀察比較有名的專案發現，大家其實多是用 tsup 這個工具來產 cjs 跟 esm 最終程式碼的。
+
+可以產出單一的檔案，並且支援 tree-shaking 及 minify 等選項。
 
 ```json filename="tsc"
 {
