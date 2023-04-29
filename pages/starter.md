@@ -18,6 +18,11 @@ npx create-next-app@latest --ts
 yarn create next-app --typescript
 ```
 
+```bash copy
+# default with tailwindcss
+npx create-next-app -e with-tailwindcss projectname
+```
+
 ## t3
 
 ```bash copy

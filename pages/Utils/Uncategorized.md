@@ -10,3 +10,9 @@ https://source.unsplash.com/random/1920x1080
 ## Tailwind CSS Cheat Sheet
 
 https://tailwindcomponents.com/cheatsheet/
+
+## Generate Secret
+
+```bash copy
+openssl rand -base64 32
+```

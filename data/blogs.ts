@@ -8,8 +8,15 @@ export interface BlogType {
 
 const blog: BlogType[] = [
   {
+    title: "Ignore cssls lingting rule in neovim",
+    desc: "@tailwindcss的Linting規則一直報錯，Neovim版解決方式。",
+    date: "Apr 23 2023",
+    tags: ["neovim", "tailwindcss"],
+    path: "/blogs/tailwindcss-ignore",
+  },
+  {
     title: "Github CI",
-    desc: "Github負責typecheck, lint。部署方則取消。",
+    desc: "從現在開始Github Action負責typecheck, lint。部署端認真部署就好。",
     date: "Apr 22 2023",
     tags: ["github", "ci"],
     path: "/blogs/github-ci",

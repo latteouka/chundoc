@@ -38,6 +38,12 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  swcMinify: true,
 };
+```
+
+```json filename="package.json"
+"scripts": {
+   "lint": "next lint",
+   "typecheck": "tsc --noEmit",
+ },
 ```
