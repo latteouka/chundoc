@@ -49,7 +49,7 @@ const config: DocsThemeConfig = {
       </svg>
     ),
   },
-  darkMode: false,
+  // darkMode: false,
 };
 
 export default config;

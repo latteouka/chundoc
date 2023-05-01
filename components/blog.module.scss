@@ -4,7 +4,6 @@ $duration: 0.4s;
 .container {
   font-size: 1rem;
   line-height: 1.75;
-  color: #1e293b;
 }
 
 .box {
@@ -44,17 +43,15 @@ $duration: 0.4s;
 .title {
   display: inline-block;
   font-weight: 700;
-  font-size: 1.25em;
+  font-size: 1.4em;
   margin-bottom: 0.1em;
 }
 
 .desc {
   margin-bottom: 0.5em;
-  color: #475569;
 }
 
 .date {
-  color: #94a3b8;
   font-size: 0.9rem;
 }
 
@@ -70,6 +67,6 @@ $duration: 0.4s;
 
 .tag {
   border-radius: 0.5rem;
-  padding: 0rem 0.5rem;
-  background-color: $tag-color;
+  padding: 0rem 0.3rem;
+  border: 1px solid;
 }
