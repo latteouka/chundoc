@@ -1,5 +1,7 @@
 ## dayjs
 
+顯示距離現在的時間。
+
 ```ts
 // yarn add dayjs
 import dayjs from "dayjs";
