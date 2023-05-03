@@ -8,7 +8,6 @@ const withNextra = require("nextra")({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  swcMinify: true,
 });
 
 module.exports = withNextra();

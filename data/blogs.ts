@@ -16,7 +16,7 @@ const blog: BlogType[] = [
   },
   {
     title: "Github CI",
-    desc: "從現在開始Github Action負責typecheck, lint。部署端認真部署就好。",
+    desc: "Github Action負責typecheck, lint。部署端認真部署就好。",
     date: "Apr 22 2023",
     tags: ["github", "ci"],
     path: "/blogs/github-ci",
