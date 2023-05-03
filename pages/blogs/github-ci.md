@@ -1,5 +1,7 @@
 ## CI
 
+在這檔案設定 Github Actions
+
 ```yaml filename="./github/workflows/ci.yml"
 name: CI
 
@@ -29,6 +31,8 @@ jobs:
         run: echo $DATABASE_URL
 ```
 
+在 next.config 取消 typescript, linting 的設定，這樣部署時就會跳過
+
 ```js filename="next.config.mjs"
 const config = {
   // add these to skip at deploy phase
@@ -40,6 +44,8 @@ const config = {
   },
 };
 ```
+
+別忘了確認這兩個動作有加入。
 
 ```json filename="package.json"
 "scripts": {

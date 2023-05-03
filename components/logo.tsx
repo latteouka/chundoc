@@ -12,7 +12,7 @@ const Logo = () => {
       <Toaster position="bottom-center" />
       <div className={style.logo}>
         <Image width={30} height={30} src={logo} alt="logo" />
-        <div style={{ color: "#64748b" }}>Yi Chun</div>
+        <div style={{ color: "#64748b" }}>chundev</div>
       </div>
     </div>
   );

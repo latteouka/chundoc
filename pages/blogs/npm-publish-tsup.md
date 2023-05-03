@@ -14,9 +14,9 @@ npm publish --access public
 
 ## tsconfig.json
 
-我原本是用 tsc 打包，但發現檔案很大，明明是很簡單的程式卻快要 20KB。
+我原本是用 tsc 打包，但發現檔案很大，明明是很簡單的程式卻快要 20KB，因為他是把 ts 轉成 js，檔案一個一個都留下。
 
-tsc 打包的話都是看 tsconfig 的參數。
+另外 tsc 打包的話都是看 tsconfig 的參數。
 
 後來我去觀察比較有名的專案發現，大家其實多是用 tsup 這個工具來產 cjs 跟 esm 最終程式碼的。
 
@@ -87,7 +87,7 @@ tsc 打包的話都是看 tsconfig 的參數。
 }
 ```
 
-會產出
+執行會產出
 
 - ./dist/index.js (cjs)
 - ./dist/index.mjs (esm)
@@ -158,4 +158,4 @@ $ yalc publish
 
 這時就已經發布這個名稱的 package 到本機 `~/.yalc/packages` 底下。
 
-於是可以在新的專案中用 `yarn yalc add @name/package` 來安裝並測試。
+於是可以在新的專案中用 `yarn yalc add @name/package` 來安裝並測試，不用真的發布到 npm 上。
