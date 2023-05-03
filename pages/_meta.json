@@ -2,20 +2,19 @@
   "index": "Intro",
   "blog": "Blog",
   "todo": "Todos",
-  "blogs": {
-    "title": "Blog",
-    "type": "page",
-    "display": "hidden"
-  },
   "palettes": "Palettes",
+  "starter": "Starter",
   "WebDesign": "Web Design",
   "WebGL": "WebGL",
   "Javascript": "Javascript",
   "Typescript": "Typescript",
   "React": "React.js",
   "Next": "Next.js",
+  "utils": "Utils",
   "Others": "Other",
-  "design": "Design Pattern",
-  "starter": "Starter",
-  "voiceactor": "声優"
+  "blogs": {
+    "title": "Blog",
+    "type": "page",
+    "display": "hidden"
+  }
 }
