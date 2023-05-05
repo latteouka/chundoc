@@ -4,6 +4,8 @@
 
 如果要手動就 `tmux source-file ~/.tmux.conf`
 
+因為我是慣用 ctrl+t 的，所以主機上就改用比較近的 g，預設的 b 對我來說很不好按。
+
 ```bash filename="~/.tmux.conf"
 # set-option -g default-terminal "screen-256color"
 set -g default-terminal "tmux-256color"
@@ -11,7 +13,7 @@ set -ga terminal-overrides ",xterm-256color:Tc"
 
 # change prefix
 unbind C-b
-set-option -g prefix C-t
+set-option -g prefix C-g
 set-option -g repeat-time 0
 
 #### Key bindings
