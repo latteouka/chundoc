@@ -2,13 +2,13 @@
 
 ## puppeteer-core
 
-如果你是在自己電腦裝來爬，就直接裝 puppeteer 可以。
+如果你是在自己電腦裝來爬，就直接裝 puppeteer 可以不用想太多。
 
 包在 electron 時（或是 serverless 服務之類），會不能直接用原本的 puppeteer（會順便幫你裝最新 puppeteer 可用的 chrome），
 路徑解析會有問題。要改用 puppeteer-core 自己找路徑。
 
 如果有特殊的安裝環境就要自己想辦法修正。
-下面是 win32、win64、MacOS 的預設路徑。
+下面是 electron 實作 ok 的 win32、win64、MacOS 的預設路徑。
 
 ```ts
 import puppeteer from "puppeteer-core";
