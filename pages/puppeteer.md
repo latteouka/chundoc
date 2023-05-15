@@ -99,6 +99,8 @@ if (cursor.length === 1) {
 }
 
 // close browser
+// 如果同時間有別的東西一起在跑會被影響
+// 可以用++--數量決定要不要關
 this.browser.close();
 ```
 
