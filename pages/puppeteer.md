@@ -61,6 +61,12 @@ this.page = await this.browser?.newPage()!;
 await this.page.goto(url, {
   waitUntil: "networkidle0",
 });
+// reload page
+await this.page.reload({
+  waitUntil: "networkidle0",
+});
+
+// 上述這種內容有更新的動作，做下一步之前waitFor特定元素比較保險
 
 // wait for element defined by XPath appear in page
 // can also wait for other things
@@ -76,10 +82,9 @@ await loginAccount.type(account);
 // search by xpath
 await this.page.$x('//*[@id="tabBody_3"]/table/tbody/tr[2]/td[6]');
 
-// reload page
-await this.page.reload({
-  waitUntil: "networkidle0",
-});
+// search by text
+const search = "886" + this.currentPhone.slice(1, 10);
+await this.page.$x(`//u[contains(text(), '${search}')]`);
 
 // fetch content
 cursor = await this.page.$x("/html/body/table[1]/tbody/tr[3]/td[2]");
@@ -112,4 +117,19 @@ const locate: any = await this.page.$x("//a[contains(text(), '執行定位')]");
 
 // click on
 locate[0].click();
+```
+
+## 點擊後切換到新頁
+
+```ts
+const pageTarget = this.page.target();
+
+await result[0].click();
+
+const newTarget = await this.browser.waitForTarget(
+  (target) => target.opener() === pageTarget
+);
+const newPage = await newTarget.page();
+
+this.page = newPage;
 ```
