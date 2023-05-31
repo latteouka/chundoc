@@ -16,6 +16,7 @@
   "homepage": "https://github.com/latteouka/chundoc",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.4",
+    "axios": "^1.4.0",
     "gsap": "^3.11.5",
     "next": "^13.0.6",
     "nextra": "latest",

@@ -1,4 +1,17 @@
+## articles
+
+- high dimensional matrix dot product
+- tensor vs Tensor
+- transpose
+- broadcasting
+
 ## Todo List
+
+- Read
+  2105.11084 Unsupervised Speech Recognition 到目前很強的語音辨識
+
+- [file encryption animation](https://twitter.com/thomasauros/status/1659551096828841990)
+  https://evervault.com/use-cases/file-encryption?debug=1
 
 - Build a Trail, Draw with GPGPU
   https://qiita.com/ukonpower  

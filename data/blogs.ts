@@ -8,6 +8,13 @@ export interface BlogType {
 
 const blog: BlogType[] = [
   {
+    title: "Deep Learning Roadmap",
+    desc: "慢慢更新中",
+    date: "May 15 2023",
+    tags: ["ml", "dl", "pytorch"],
+    path: "/blogs/ml-roadmap",
+  },
+  {
     title: "Ignore cssls lingting rule in neovim",
     desc: "@tailwindcss的Linting規則一直報錯，Neovim版解決方式。",
     date: "Apr 23 2023",
