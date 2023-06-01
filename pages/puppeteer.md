@@ -135,3 +135,56 @@ const newPage = await newTarget.page();
 
 this.page = newPage;
 ```
+
+## Screenshot + base64
+
+```ts
+const elementXPath = "/html/body/form/table/tbody/tr[4]/td[2]";
+const elementHandle = await this.page.$x(elementXPath);
+const boundingBox = await elementHandle[0].boundingBox();
+
+if (!boundingBox) return false;
+
+const x = boundingBox.x + 8;
+const y = boundingBox.y + 1;
+// const width = boundingBox.width / 2 - 10;
+const width = 104;
+const height = 30;
+
+await this.page.screenshot({
+  path: "verification.png",
+  clip: {
+    x,
+    y,
+    width,
+    height,
+  },
+});
+
+const base64Image = imageToBase64("verification.png");
+const response = await electronFetch("https://gotcha.chundev.com/insloc/ocr", {
+  method: "POST",
+  body: JSON.stringify({ image: base64Image }),
+  headers: { "Content-Type": "application/json" },
+});
+const body = await response.json();
+```
+
+```ts
+export function imageToBase64(imagePath: string) {
+  const imageData = fs.readFileSync(imagePath);
+  const base64Data = imageData.toString("base64");
+  return base64Data;
+}
+```
+
+### Server side check
+
+```js
+const base64regex =
+  /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+if (!base64regex.test(image)) {
+  res.json({ message: "The image is not base64 encoded." });
+  return;
+}
+```
