@@ -1,5 +1,15 @@
 const palettes = [
   {
+    title: "Mono",
+    colors: [
+      { color: "#00DB58", per: 20 },
+      { color: "#F6F6F6", per: 20 },
+      { color: "#757575", per: 20 },
+      { color: "#333333", per: 20 },
+      { color: "#000000", per: 20 },
+    ],
+  },
+  {
     title: "秋",
     colors: [
       { color: "#faf7ed", per: 60 },

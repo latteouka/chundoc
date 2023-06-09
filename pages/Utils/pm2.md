@@ -6,3 +6,9 @@ pm2 start "yarn start" --name yourProjec
 
 pm2 save
 ```
+
+## Python
+
+```bash
+pm2 start loop.py --name line --interpreter python3
+```
