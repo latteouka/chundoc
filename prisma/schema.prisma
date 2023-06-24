@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+
+model Exchange {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  bankname  String   @unique
+  bankbuy   String   
+  banksell  String
+  time      String? 
+  allowance Float?
+}
+
+model User {
+  id        String  @id @default(cuid())
+  name      String?
+  createdAt DateTime @default(now())
+  due       DateTime @default(now())
+  balance   Float    @default(20)
+  email     String   @unique
+  emailVerified DateTime?
+  access    String?
+  secret    String?
+  deposits  Deposit[]
+  subdeposits Subdeposit[]
+  orders    Order[]
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  orderlogs     Orderlog[]
+}
+
+model Deposit {
+  id        Int      @id @default(autoincrement())
+  paymentId Int      @unique
+  createdAt DateTime @default(now())
+  amount    Float
+  added     Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+model Subdeposit {
+  id        Int      @id @default(autoincrement())
+  paymentId Int      @unique
+  createdAt DateTime @default(now())
+  amount    Float
+  added     Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+model Order {
+  id        Int      @id @default(autoincrement())
+  orderId   BigInt   @unique 
+  createdAt DateTime @default(now())
+  isCount   Boolean  @default(false)
+  isCharge  Boolean  @default(false)
+  complete  Float    @default(0)
+  fee       Float    @default(0)
+  type      String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+model Orderlog {
+  id        Int      @id @default(autoincrement())
+  amount    Float    @default(0)
+  createdAt DateTime @default(now())
+  exchange  String?
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Shadow {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+  subtitle  String?
+  answer    String   @db.LongText
+  answerTime String?
+  word      String   @db.LongText
+  wordAns   String?  @db.LongText
+  tw        String?  @db.LongText
+  coverUrl  String
+  soundUrl  String
+  due       DateTime @default(now())
+}
+
+model Discuss {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  user      String
+  content   String   @db.LongText
+  name      String?
+}
+
+
