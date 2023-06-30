@@ -12,6 +12,7 @@ const JPBOX = () => {
         >
           App Store
         </a>
+        <div className={styles.link}> / </div>
         <a
           href="https://play.google.com/store/apps/details?id=com.chundev.jpbox"
           className={styles.link}

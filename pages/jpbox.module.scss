@@ -1,20 +1,32 @@
+@font-face {
+  font-family: "Proto";
+  src: url("../public/fonts/Proto Mono Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
+  background-color: black;
+  font-family: "Proto";
   display: flex;
   flex-direction: column;
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 95vh;
+  width: 100%vw;
+  height: 100vh;
+  color: #f6f6f6;
 }
 
 .linkWrapper {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .link {
-  color: blue;
+  color: #757575;
   text-decoration: none;
   font-size: 1.3rem;
 }
