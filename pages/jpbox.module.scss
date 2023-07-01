@@ -1,13 +1,13 @@
 @font-face {
-  font-family: "Proto";
-  src: url("../public/fonts/Proto Mono Regular.ttf");
+  font-family: "Share";
+  src: url("../public/fonts/ShareTechMono.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 .container {
   background-color: black;
-  font-family: "Proto";
+  font-family: "Share";
   display: flex;
   flex-direction: column;
   overflow: hidden;
