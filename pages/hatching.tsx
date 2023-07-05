@@ -20,6 +20,19 @@ const Address: React.FC = () => {
           systemctl restart hatching-triage hatching-sandbox-net
           hatching-sandbox hatching-vms triage-frontend nginx
         </p>
+        <p>https://hatching.dev/install-docs/sandbox/</p>
+        <p>systemctl restart hatching-sandbox-net</p>
+        <p>systemctl start hatching-sandbox-net</p>
+        <p>systemctl start hatching-sandbox</p>
+        <p>systemctl start hatching-vms</p>
+
+        <p>hatching-vms build</p>
+        <p>journalctl -u hatching-vms -f</p>
+        <p>systemctl restart hatching-sandbox-net hatching-sandbox</p>
+        <p>
+          systemctl status hatching-sandbox-net systemctl status
+          hatching-sandbox ls -al /var/lib/sandbox/logs
+        </p>
         <h1 className="my-4 text-3xl underline">URL</h1>
         <p className="mt-4">
           wget https://deploy.hatching.io/pkg/kymo/470feda2198c727c/hatching.gpg
