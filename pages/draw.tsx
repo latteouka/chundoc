@@ -52,6 +52,7 @@ const Draw = () => {
     <div className={styles.container}>
       <div>Email</div>
       <div>{params.userId}</div>
+      <div>{email}</div>
       <input
         type="email"
         className={styles.input}
