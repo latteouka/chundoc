@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Share";
+  src: url("../public/fonts/ShareTechMono.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  background-color: black;
+  font-family: "Share";
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100%vw;
+  height: 100vh;
+  color: #f6f6f6;
+}
+
+.input {
+  font-family: "Share";
+  margin-top: 8px;
+  border: 1px;
+  border: #757575;
+  background: #333333;
+  width: 280px;
+  color: #f6f6f6;
+  padding: 2px;
+}

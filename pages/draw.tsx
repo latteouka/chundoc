@@ -1,16 +1,18 @@
 import { useRouter } from "next/router";
+import styles from "./draw.module.scss";
 
-const Draw = (props) => {
+const Draw = () => {
   const router = useRouter();
   console.log(router.query);
   const params = router.query;
 
   if (!params.userId || !params.platform) return null;
   return (
-    <div>
-      <div>etet</div>
-      <div>etet</div>
-      <div>etet</div>
+    <div className={styles.container}>
+      <div>Email</div>
+      <input className={styles.input} />
+      <div>{params.userId}</div>
+      <div>{params.platform}</div>
     </div>
   );
 };
