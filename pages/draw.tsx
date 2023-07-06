@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
 
-const Draw = () => {
+const Draw = (props) => {
   const router = useRouter();
-  console.log(router.query.keyword);
+  console.log(router.query);
+  const params = router.query;
+
+  if (!params.userId || !params.platform) return null;
   return (
     <div>
       <div>etet</div>
@@ -12,3 +15,16 @@ const Draw = () => {
   );
 };
 export default Draw;
+
+// export async function getServerSideProps(context) {
+//   const userId = context.query["userId"];
+//   const platform = context.query["platform"];
+//   if (!userId) return { props: {} };
+//
+//   return {
+//     props: {
+//       userId,
+//       platform,
+//     },
+//   };
+// }
