@@ -35,12 +35,13 @@ const Draw = () => {
       });
       if (!result.data) return;
       setEmail(result.data.email);
+      setReady(true);
     };
 
     getNow();
   }, [params.userId]);
 
-  if (!params.userId || !params.platform) return null;
+  if (!params.userId || !params.platform || !ready) return null;
 
   if (done)
     return (
