@@ -27,4 +27,24 @@
   width: 280px;
   color: #f6f6f6;
   padding: 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.submit {
+  border: none;
+  font-family: "Share";
+  color: #f6f6f6;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #757575;
+  cursor: pointer;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }
