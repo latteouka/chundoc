@@ -50,7 +50,7 @@ const Draw = () => {
     );
   return (
     <div className={styles.container}>
-      <div>Email</div>
+      <div className={styles.title}>Email</div>
       <input
         type="email"
         className={styles.input}
