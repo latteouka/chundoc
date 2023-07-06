@@ -16,23 +16,13 @@ const Draw = () => {
 
   async function handleSubmit() {
     setLoading(true);
-    if (email === "") {
-      await axios.post("https://jpbox.chundev.com/draws/add", {
-        userId: params.userId,
-        platform: params.platform,
-        title,
-        email,
-        createdAt: new Date(),
-      });
-    } else {
-      await axios.post("https://jpbox.chundev.com/draws/update", {
-        userId: params.userId,
-        platform: params.platform,
-        title,
-        email,
-        createdAt: new Date(),
-      });
-    }
+    await axios.post("https://jpbox.chundev.com/draws/update", {
+      userId: params.userId,
+      platform: params.platform,
+      title,
+      email,
+      createdAt: new Date(),
+    });
     setLoading(false);
     setDone(true);
   }
@@ -61,7 +51,9 @@ const Draw = () => {
   return (
     <div className={styles.container}>
       <div>Email</div>
+      <div>{params.userId}</div>
       <input
+        type="email"
         className={styles.input}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
