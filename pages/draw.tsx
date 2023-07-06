@@ -30,7 +30,7 @@ const Draw = () => {
   useEffect(() => {
     if (!params.userId) return;
     const getNow = async () => {
-      const result = await axios.post("http://localhost:4000/draws/now", {
+      const result = await axios.post("https://jpbox.chundev.com/draws/now", {
         userId: params.userId,
       });
       if (!result.data) return;
@@ -51,8 +51,6 @@ const Draw = () => {
   return (
     <div className={styles.container}>
       <div>Email</div>
-      <div>{params.userId}</div>
-      <div>{email}</div>
       <input
         type="email"
         className={styles.input}
