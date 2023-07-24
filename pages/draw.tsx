@@ -33,7 +33,10 @@ const Draw = () => {
       const result = await axios.post("https://jpbox.chundev.com/draws/now", {
         userId: params.userId,
       });
-      if (!result.data) return;
+      if (!result.data) {
+        setReady(true);
+        return;
+      }
       setEmail(result.data.email);
       setReady(true);
     };
