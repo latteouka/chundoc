@@ -22,9 +22,15 @@ const JPBOX = () => {
         </a>
       </div>
       <div className={styles.info}>
-        <div className={styles.question}>Q：間隔機制怎麼運作的？</div>
+        <div className={styles.question}>Q：跟之前的版本有什麼不一樣？</div>
         <div className={styles.answer}>
-          A：人的記憶會在隔一段時間後或是忘記後再次複習而加強，所以就讓App來幫你排時間吧！你只需要依照自己的直覺回答記得或不記得即可，長期下來刷過的單字很難忘記！
+          A：全字卡現已加入重音標記、發音校正完畢。目前持續新增例句及文法卡片中，目標是所有字卡都有多個例句可以參考。
+        </div>
+      </div>
+      <div className={styles.info}>
+        <div className={styles.question}>Q：間隔重複機制是什麼？</div>
+        <div className={styles.answer}>
+          A：人的記憶會在隔一段時間後或是忘記後再次複習而加強，就讓App來幫你排時間吧！你只需要依照自己的直覺回答記得或不記得即可，長期下來刷過的單字很難忘記！
         </div>
       </div>
       <div className={styles.info}>
