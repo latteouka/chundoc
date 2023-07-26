@@ -10,12 +10,10 @@
   font-family: "Share";
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  justify-content: center;
   align-items: center;
-  width: 100%vw;
-  height: 100vh;
+  width: 100%;
   color: #f6f6f6;
+  padding-bottom: 20px;
 }
 
 .linkWrapper {
@@ -29,4 +27,21 @@
   color: #757575;
   text-decoration: none;
   font-size: 1.3rem;
+}
+
+.info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+}
+
+.question {
+  color: #f6f6f6;
+}
+
+.answer {
+  color: #757575;
 }
