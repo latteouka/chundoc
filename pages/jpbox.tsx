@@ -28,6 +28,16 @@ const JPBOX = () => {
         </div>
       </div>
       <div className={styles.info}>
+        <div className={styles.question}>Q：Keep跟Okay分別是？</div>
+        <div className={styles.answer}>
+          A：覺得已經有印象的字就按Okay，會把卡片提升一個間隔等級，而不記得或是記憶很曖昧的話就按Keep，會重置這張卡片的間隔等級（於是你會更快需要複習它）。
+        </div>
+      </div>
+      <div className={styles.info}>
+        <div className={styles.question}>Q：連續登入可以做什麼？</div>
+        <div className={styles.answer}>A：會對拿到的Exp跟金幣產生加乘！</div>
+      </div>
+      <div className={styles.info}>
         <div className={styles.question}>Q：有沒有訂閱差在哪裡？</div>
         <div className={styles.answer}>
           A：看過的字超過200後就需要訂閱解開上限，另外訂閱後可以看見目前卡片的等級分佈統計。
