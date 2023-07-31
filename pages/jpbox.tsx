@@ -46,7 +46,7 @@ const JPBOX = () => {
       <div className={styles.info}>
         <div className={styles.question}>Q：有沒有訂閱差在哪裡？</div>
         <div className={styles.answer}>
-          A：看過的字（Read）超過200後就需要訂閱解開上限，其他功能都是完全解放的唷。
+          A：看過的字（Read）超過200後就需要訂閱解開上限，其他功能都是完全解放的唷。如果這個方法是適合的你再考慮訂閱吧～
         </div>
       </div>
       <div className={styles.info}>
