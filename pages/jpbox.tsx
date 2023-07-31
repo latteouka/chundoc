@@ -34,9 +34,9 @@ const JPBOX = () => {
         </div>
       </div>
       <div className={styles.info}>
-        <div className={styles.question}>Q：Keep跟Okay分別是？</div>
+        <div className={styles.question}>Q：我何時才按記得呢？</div>
         <div className={styles.answer}>
-          A：覺得已經有印象的字就按Okay，會把卡片提升一個間隔等級，而不記得或是記憶很曖昧的話就按Keep，會重置這張卡片的間隔等級（於是你會更快需要複習它）。
+          A：覺得已經有印象的字就按記得，會把卡片提升一個間隔等級，而不記得或是記憶很曖昧的話就按不記得，會重置這張卡片的間隔等級（於是你會更快需要複習它），見到New卡當然大部分的場合只能直接按不記得囉。
         </div>
       </div>
       <div className={styles.info}>
