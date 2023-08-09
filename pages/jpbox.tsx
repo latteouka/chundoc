@@ -1,8 +1,12 @@
+import Head from "next/head";
 import styles from "./jpbox.module.scss";
 
 const JPBOX = () => {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>JPBox 2.0</title>
+      </Head>
       <h1>JPBox 2.0</h1>
       <div className={styles.linkWrapper}>
         <a
