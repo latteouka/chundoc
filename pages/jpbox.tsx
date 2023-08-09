@@ -36,17 +36,14 @@ const JPBOX = () => {
       <div className={styles.info}>
         <div className={styles.question}>Q：我何時才按記得呢？</div>
         <div className={styles.answer}>
-          A：覺得已經有印象的字就按記得，會把卡片提升一個間隔等級，而不記得或是記憶很曖昧的話就按不記得，會重置這張卡片的間隔等級（於是你會更快需要複習它），見到New卡當然大部分的場合只能直接按不記得囉。
+          A：覺得已經有印象的字就按記得，會把卡片提升一個間隔等級，而不記得或是記憶很曖昧的話就按不記得，會重置這張卡片的間隔等級（於是你會更快需要複習它）。
         </div>
-      </div>
-      <div className={styles.info}>
-        <div className={styles.question}>Q：連續登入可以做什麼？</div>
-        <div className={styles.answer}>A：會對拿到的Exp跟金幣產生加乘！</div>
       </div>
       <div className={styles.info}>
         <div className={styles.question}>Q：有沒有訂閱差在哪裡？</div>
         <div className={styles.answer}>
-          A：看過的字（Read）超過200後就需要訂閱解開上限，其他功能都是完全解放的唷。如果這個方法是適合的你再考慮訂閱吧～
+          A：看過的字（Read）超過200後就需要訂閱解開上限，其他功能都是完全解放的唷。還有會增加每日新單字數量的選項（20,
+          25）。
         </div>
       </div>
       <div className={styles.info}>
@@ -58,25 +55,21 @@ const JPBOX = () => {
       <div className={styles.info}>
         <div className={styles.question}>Q：新單字一天只能10個嗎？</div>
         <div className={styles.answer}>
-          A：在Settings可以選擇10或15，即使是10到中期複習量就會有點花時間了喔～
+          A：在Settings可以選擇10或15，即使是10到中期複習量就會有點花時間了喔～另外訂閱會增加20及25的選項。
         </div>
       </div>
       <div className={styles.info}>
-        <div className={styles.question}>Q：日期跟???是什麼功能？</div>
+        <div className={styles.question}>
+          Q：日期跟「聴いてみて」是什麼功能？
+        </div>
         <div className={styles.answer}>
-          A：可以練習聽力用的，???點了會聽到數字，可以測試自己聽不聽得懂，長按後可以看到提示。
+          A：可以練習聽力用的，點了會聽到發音，可以測試自己聽不聽得懂，長按後可以看到提示。
         </div>
       </div>
       <div className={styles.info}>
-        <div className={styles.question}>Q：稱號可以做什麼？</div>
+        <div className={styles.question}>Q：Badge做什麼用的呢？</div>
         <div className={styles.answer}>
-          A：沒有什麼功能😆，希望能增加一點單字量囉，有想要加上去的可以告訴我。
-        </div>
-      </div>
-      <div className={styles.info}>
-        <div className={styles.question}>Q：Badge呢？</div>
-        <div className={styles.answer}>
-          A：這邊除了一些累積的里程碑外，其實大部分是選擇發音特殊的數字，長按可以看到提示。
+          A：沒有實質功能，大部分是選擇發音特殊的數字增加印象，長按可以看到提示。
         </div>
       </div>
     </div>
