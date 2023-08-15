@@ -1,2 +1,3 @@
 chundoc 3000
-tools 3001
+jpboxapi 3001
+insloc 3002
