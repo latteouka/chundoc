@@ -5,6 +5,8 @@ pm2 start yarn --name api -- start
 pm2 start "yarn start" --name yourProjec
 
 pm2 save
+
+pm2 resurrect
 ```
 
 ## Python
