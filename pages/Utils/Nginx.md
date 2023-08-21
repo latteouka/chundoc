@@ -70,7 +70,7 @@ server {
 
   ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-  include snippets/ssl-params.conf;
+  # include snippets/ssl-params.conf;
 
   location / {
     # reverse proxy for next server
@@ -136,4 +136,18 @@ export default async function handler(
   res.setHeader("Content-Type", "image/png");
   return res.send(imageBuffer);
 }
+```
+
+```nginx filename="default"
+# /etc/nginx/sites-available/default
+
+location /uploads/ {
+  alias /home/oukalatte/isms/public/records/;
+}
+
+# root vs alias
+
+# 資料夾權限要注意 ex:
+# sudo usermod -a -G username groupname
+# sudo chown -R :groupname /home/xxx/yyy/public/zzz/
 ```
