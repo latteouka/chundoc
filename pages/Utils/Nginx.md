@@ -27,6 +27,9 @@ sudo letsencrypt certonly -a webroot --webroot-path=/var/www/html -d example.com
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
 sudo vim /etc/nginx/snippets/ssl-params.conf
+
+# renew
+sudo certbot renew
 ```
 
 ```nginx filename="ssl-params.conf"
