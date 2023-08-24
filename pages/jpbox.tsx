@@ -25,10 +25,25 @@ const JPBOX = () => {
           Play Store
         </a>
       </div>
+      {/* <div className={styles.draw}> */}
+      {/*   <a */}
+      {/*     href="https://forms.gle/CaHyLUXndyfo67ue8" */}
+      {/*     className={styles.drawlink} */}
+      {/*     target="_blank" */}
+      {/*   > */}
+      {/*     抽獎登記點我!! */}
+      {/*   </a> */}
+      {/* </div> */}
       <div className={styles.info}>
         <div className={styles.question}>Q：跟之前的版本有什麼不一樣？</div>
         <div className={styles.answer}>
           A：全字卡現已加入重音標記、發音校正完畢。目前持續新增例句及文法卡片中，目標是所有字卡都有多個例句可以參考。
+        </div>
+      </div>
+      <div className={styles.info}>
+        <div className={styles.question}>Q：目前字卡數量？</div>
+        <div className={styles.answer}>
+          A：N5(662)、N4(557)、N3(1564)、N2(1425)、N1(2468)。
         </div>
       </div>
       <div className={styles.info}>
