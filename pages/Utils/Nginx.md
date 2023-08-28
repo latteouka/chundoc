@@ -54,9 +54,16 @@ ssl_dhparam /etc/ssl/certs/dhparam.pem;
 
 ### Config
 
-```nginx filename="default"
-# /etc/nginx/sites-available/default
+```nginx filename="/etc/nginx/nginx.conf"
+# 檔案上傳大小限制
+# 沒設定預設只有1MB
 
+http {
+  client_max_body_size 10M;
+}
+```
+
+```nginx filename="/etc/nginx/sites-available/default"
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
