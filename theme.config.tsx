@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
     const { asPath, defaultLocale, locale } = useRouter();
     const { frontMatter } = useConfig();
     const url =
-      "https://doc.chundev.com" +
+      "https://chundev.com" +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
     return (
       <>
@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
   },
   navigation: false,
   chat: {
-    link: "https://www.instagram.com/latteouka/",
+    link: "https://www.instagram.com/jpbox_app/",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
