@@ -37,7 +37,7 @@ const JPBOX = () => {
       <div className={styles.info}>
         <div className={styles.question}>Q：跟之前的版本有什麼不一樣？</div>
         <div className={styles.answer}>
-          A：全字卡現已加入重音標記、發音校正完畢。目前持續新增例句及文法卡片中，目標是所有字卡都有多個例句可以參考。
+          A：全字卡現已加入重音標記、發音校正完畢。目前持續新增例句及文法卡片。也加入帳號同步機制，即使換了設備或重新安裝，你都能透過綁定的帳號將記憶紀錄同步回來～
         </div>
       </div>
       <div className={styles.info}>
