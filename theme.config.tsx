@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
   },
   navigation: false,
   chat: {
-    link: "https://www.instagram.com/jpbox_app/",
+    link: "https://www.instagram.com/latteouka/",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
