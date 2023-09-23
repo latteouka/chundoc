@@ -17,6 +17,7 @@
 }
 
 .linkWrapper {
+  margin-top: 20px;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -27,10 +28,19 @@
   color: #757575;
   text-decoration: none;
   font-size: 1.3rem;
+  border: solid 2px #757575;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.linktext {
+  color: #757575;
+  text-decoration: none;
+  font-size: 1.3rem;
 }
 
 .info {
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
