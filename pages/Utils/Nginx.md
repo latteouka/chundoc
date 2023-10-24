@@ -30,6 +30,12 @@ sudo vim /etc/nginx/snippets/ssl-params.conf
 
 # renew
 sudo certbot renew
+
+# list all
+sudo certbot certificates
+
+# delete
+sudo certbot delete --cert-name example.com
 ```
 
 ```nginx filename="ssl-params.conf"
