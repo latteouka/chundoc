@@ -36,6 +36,10 @@ sudo certbot certificates
 
 # delete
 sudo certbot delete --cert-name example.com
+
+# force with preferred-chain
+# 弱掃會抱怨根X3過期
+certbot --force-renewal --preferred-chain "ISRG Root X1" renew
 ```
 
 ```nginx filename="ssl-params.conf"
@@ -97,6 +101,9 @@ server {
     proxy_set_header Connection 'upgrade';
     proxy_set_header Host $host;
     proxy_cache_bypass $http_upgrade;
+
+    # 資安掃描用
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
   }
 
   location ~ /.well-known {
