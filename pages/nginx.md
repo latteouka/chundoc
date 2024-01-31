@@ -1,3 +1,5 @@
+https://gist.github.com/jjsquady/5399d6e1b23f501083a9c262d806e248
+
 這個部署 Next.js 到自己的主機會用到。
 
 ```bash
