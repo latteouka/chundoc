@@ -10,7 +10,7 @@ crontab -e
 
 # 路徑要用絕對的
 
-0 9 * * 1-5 /usr/bin/node /home/oukalatte/tender/tender.js
-0 17 * * 1-5 /usr/bin/node /home/oukalatte/tender/putcall.js
+0 9 * * 1-5 /usr/bin/node /home/xxx/abc/tender.js
+0 17 * * 1-5 /usr/bin/node /home/xxx/abc/putcall.js
 # */1 * * * * /usr/bin/node /var/www/socialmail/utils/sendemailcron.js
 ```
