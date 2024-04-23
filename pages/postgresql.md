@@ -42,3 +42,9 @@ host  all  all 0.0.0.0/0 md5
 ```bash
 DATABASE_URL='postgresql://user:password@ip:5432/dbname?schema=user'
 ```
+
+## 如何新增資料庫
+
+```
+
+```
