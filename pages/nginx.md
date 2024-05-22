@@ -176,3 +176,18 @@ location /uploads/ {
 # sudo usermod -a -G username groupname
 # sudo chown -R :groupname /home/xxx/yyy/public/zzz/
 ```
+
+### macos
+
+```nginx filename="/opt/homebrew/etc/nginx/nginx.conf"
+
+# default setting路徑如上
+# /opt/homebrew/etc/nginx/servers 底下的也會全吃
+
+# 開發中處理cors問題
+location /uploads/ {
+    add_header Access-Control-Allow-Origin *;
+    alias /Users/xxx/xxx/js/xxx/uploadedFiles/;
+}
+
+```
