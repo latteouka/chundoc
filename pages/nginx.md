@@ -163,6 +163,8 @@ export default async function handler(
 }
 ```
 
+### Serve static file under directory
+
 ```nginx filename="default"
 # /etc/nginx/sites-available/default
 

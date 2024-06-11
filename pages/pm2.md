@@ -25,4 +25,6 @@ pm2 resurrect
 
 ```bash
 pm2 start loop.py --name line --interpreter python3
+
+pm2 start "uvicorn app.main:app" --name whisper
 ```
