@@ -79,16 +79,23 @@ http {
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
-  server_name example www.example.com;
-  return 301 https://$server_name$request_uri;
+
+  server_name .example.com;
+
+  location /.well-known/acme-challenge {
+    root /var/www/html;
+  }
+
+  location / {
+    return 301 https://$host$request_uri;
+  }
 }
 
 server {
-  # listen on *:443 -> ssl; instead of *:80
   listen 443 ssl http2 default_server;
   listen [::]:443 ssl http2 default_server;
 
-  server_name example.com;
+  server_name xxx.example.com;
 
   ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
@@ -106,10 +113,6 @@ server {
 
     # 資安掃描用
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-  }
-
-  location ~ /.well-known {
-    allow all;
   }
 }
 ```
@@ -175,8 +178,16 @@ location /uploads/ {
 # root vs alias
 
 # 資料夾權限要注意 ex:
+# 不然會遇到 403 Forbidden
+
+# change ownership
 # sudo usermod -a -G username groupname
 # sudo chown -R :groupname /home/xxx/yyy/public/zzz/
+
+# or change /etc/nginx/nginx.conf
+# user www-data;
+# 改成執行擁有資料夾的那個user
+
 ```
 
 ### macos
