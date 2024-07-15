@@ -20,5 +20,6 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull
+            rm -rf .next
             yarn build
             pm2 restart chundoc
