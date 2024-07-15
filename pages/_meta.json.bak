@@ -1,0 +1,19 @@
+{
+  "index": "Intro",
+  "blog": "Blog",
+  "todo": "Todos",
+  "palettes": "Palettes",
+  "starter": "Starter",
+  "WebDesign": "Web Design",
+  "WebGL": "WebGL",
+  "Javascript": "Javascript",
+  "Typescript": "Typescript",
+  "React": "React.js",
+  "Next": "Next.js",
+  "Others": "Other",
+  "blogs": {
+    "title": "Blog",
+    "type": "page",
+    "display": "hidden"
+  }
+}
