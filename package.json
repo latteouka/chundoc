@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Yi Chun DOC",
   "scripts": {
-    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -16,12 +15,12 @@
   "license": "MIT",
   "homepage": "https://github.com/latteouka/chundoc",
   "dependencies": {
-    "@prisma/client": "^4.16.1",
     "@studio-freight/lenis": "^1.0.4",
     "axios": "^1.4.0",
     "gsap": "^3.11.5",
     "next": "^13.0.6",
     "next-auth": "^4.22.1",
+    "next-themes": "^0.3.0",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "prisma": "^4.16.1",
@@ -31,6 +30,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.8.0",
     "sass": "^1.59.3",
+    "sonner": "^1.5.0",
     "zustand": "^4.3.6"
   },
   "devDependencies": {

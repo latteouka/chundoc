@@ -1,0 +1,10 @@
+{
+   "array": "array",
+   "export-default": "export-default",
+   "first-class": "first-class",
+   "hoisting": "hoisting",
+   "object-method": "object-method",
+   "template-literals": "template-literals",
+   "this": "this",
+   "_meta": "_meta"
+}

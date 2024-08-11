@@ -1,7 +1,9 @@
 {
-  "Prisma": "Prisma",
-  "ReactNative": "React Native",
-  "WebRTC": "WebRTC",
-  "ffmpeg": "ffmpeg",
-  "voiceactor": "声優"
+   "design": "design",
+   "electron": "electron",
+   "emails": "emails",
+   "ffmpeg": "ffmpeg",
+   "trpc": "trpc",
+   "voiceactor": "voiceactor",
+   "_meta": "_meta"
 }

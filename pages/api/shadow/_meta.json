@@ -1,0 +1,85 @@
+{
+  addComment: {
+    title: "addComment",
+    order: 0
+  },
+  addShadow: {
+    title: "addShadow",
+    order: 0
+  },
+  allComments: {
+    title: "allComments",
+    order: 0
+  },
+  allShadow: {
+    title: "allShadow",
+    order: 0
+  },
+  announce: {
+    title: "announce",
+    order: 0
+  },
+  changeShadows: {
+    title: "changeShadows",
+    order: 0
+  },
+  changeShadowsN1: {
+    title: "changeShadowsN1",
+    order: 0
+  },
+  changeShadowsN2: {
+    title: "changeShadowsN2",
+    order: 0
+  },
+  changeShadowsTrial: {
+    title: "changeShadowsTrial",
+    order: 0
+  },
+  clearOldComments: {
+    title: "clearOldComments",
+    order: 0
+  },
+  copyShadow: {
+    title: "copyShadow",
+    order: 0
+  },
+  countShadows: {
+    title: "countShadows",
+    order: 0
+  },
+  deleteShadow: {
+    title: "deleteShadow",
+    order: 0
+  },
+  editShadow: {
+    title: "editShadow",
+    order: 0
+  },
+  fetchShadow: {
+    title: "fetchShadow",
+    order: 0
+  },
+  forsite: {
+    title: "forsite",
+    order: 0
+  },
+  latestComments: {
+    title: "latestComments",
+    order: 0
+  },
+  latestShadow: {
+    title: "latestShadow",
+    order: 0
+  },
+  latestShadowTest: {
+    title: "latestShadowTest",
+    order: 0
+  },
+  latestShadowTrial: {
+    title: "latestShadowTrial",
+    order: 0
+  },
+  _meta: {
+    title: "_meta"
+  }
+}
