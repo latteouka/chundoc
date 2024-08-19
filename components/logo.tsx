@@ -1,12 +1,10 @@
 import Image from "next/image";
 import logo from "../public/img/logo.png";
-// import useLenis from "../utils/useLenis";
 import style from "./logo.module.scss";
 import { Toaster } from "react-hot-toast";
 
 const Logo = () => {
   // smooth scroll
-  // useLenis();
   return (
     <div>
       <Toaster position="bottom-center" />
