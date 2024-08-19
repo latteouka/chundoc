@@ -1,8 +1,8 @@
 {
-   "extend": "extend",
-   "floating": "floating",
-   "gesture": "gesture",
-   "helper": "helper",
-   "share-event": "share-event",
-   "_meta": "_meta"
+  "extend": "extend",
+  "floating": "floating",
+  "gesture": "gesture",
+  "helper": "helper",
+  "share-event": "share-event"
 }
+

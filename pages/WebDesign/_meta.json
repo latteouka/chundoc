@@ -1,10 +1,10 @@
 {
-   "GradientBorder": "GradientBorder",
-   "Pseudo": "Pseudo",
-   "compatibility": "compatibility",
-   "gsap": "gsap",
-   "highlight": "highlight",
-   "loading": "loading",
-   "scroll": "scroll",
-   "_meta": "_meta"
+  "GradientBorder": "GradientBorder",
+  "Pseudo": "Pseudo",
+  "compatibility": "compatibility",
+  "gsap": "gsap",
+  "highlight": "highlight",
+  "loading": "loading",
+  "scroll": "scroll"
 }
+

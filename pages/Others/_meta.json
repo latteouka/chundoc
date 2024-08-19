@@ -1,9 +1,9 @@
 {
-   "design": "design",
-   "electron": "electron",
-   "emails": "emails",
-   "ffmpeg": "ffmpeg",
-   "trpc": "trpc",
-   "voiceactor": "voiceactor",
-   "_meta": "_meta"
+  "design": "design",
+  "electron": "electron",
+  "emails": "emails",
+  "ffmpeg": "ffmpeg",
+  "trpc": "trpc",
+  "voiceactor": "voiceactor"
 }
+

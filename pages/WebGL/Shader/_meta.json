@@ -1,16 +1,16 @@
 {
-   "basic": "basic",
-   "cover": "cover",
-   "diffuse": "diffuse",
-   "fbo": "fbo",
-   "glitch": "glitch",
-   "image-adjustUv": "image-adjustUv",
-   "mouse": "mouse",
-   "pass": "pass",
-   "predefined": "predefined",
-   "random": "random",
-   "sdf": "sdf",
-   "vite-plugin-glsl": "vite-plugin-glsl",
-   "water": "water",
-   "_meta": "_meta"
+  "basic": "basic",
+  "cover": "cover",
+  "diffuse": "diffuse",
+  "fbo": "fbo",
+  "glitch": "glitch",
+  "image-adjustUv": "image-adjustUv",
+  "mouse": "mouse",
+  "pass": "pass",
+  "predefined": "predefined",
+  "random": "random",
+  "sdf": "sdf",
+  "vite-plugin-glsl": "vite-plugin-glsl",
+  "water": "water"
 }
+

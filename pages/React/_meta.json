@@ -1,6 +1,6 @@
 {
-   "context": "context",
-   "useIsomorphicLayoutEffect": "useIsomorphicLayoutEffect",
-   "useanimation": "useanimation",
-   "_meta": "_meta"
+  "context": "context",
+  "useIsomorphicLayoutEffect": "useIsomorphicLayoutEffect",
+  "useanimation": "useanimation"
 }
+
