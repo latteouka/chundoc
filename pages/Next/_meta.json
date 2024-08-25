@@ -1,11 +1,11 @@
 {
-   "api": "api",
-   "auth": "auth",
-   "back": "back",
-   "deploy": "deploy",
-   "localstorage": "localstorage",
-   "redirect": "redirect",
-   "session": "session",
-   "twice": "twice",
-   "_meta": "_meta"
+  "api": "api",
+  "auth": "auth",
+  "back": "back",
+  "deploy": "deploy",
+  "localstorage": "localstorage",
+  "redirect": "redirect",
+  "session": "session",
+  "twice": "twice"
 }
+
