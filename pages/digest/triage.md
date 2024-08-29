@@ -1,5 +1,12 @@
 # BIGGGGGGG UPGRADE!!
 
+```bash
+ssh usr@192.168.0.128
+
+# mini
+ssh mjib@192.168.0.129
+```
+
 ## Check current settings and do the backup
 
 1. Backup/copy all YAML configuration files from the old install/server.
@@ -10,6 +17,7 @@
 - /var/lib/triage-frontend/: \*.yaml (database)
 
 > 紀錄一下目前所有的config files
+> 目前有哪些VM存在？
 
 2. Backup and restore the PostgreSQL database on the old install/server.
 
