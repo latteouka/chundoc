@@ -1,12 +1,5 @@
 # BIGGGGGGG UPGRADE!!
 
-```bash
-ssh usr@192.168.0.128
-
-# mini
-ssh mjib@192.168.0.129
-```
-
 ## Check current settings and do the backup
 
 1. Backup/copy all YAML configuration files from the old install/server.
@@ -76,11 +69,11 @@ deb http://security.ubuntu.com/ubuntu jammy-security multiverse
 # https://deploy.hatching.io/pkg/<company>/<unique>-<version>
 # https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04
 
-wget https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04/hatching.gpg -O /etc/apt/trusted.gpg.d/hatching.gpg
-
-echo deb https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04 ./ > /etc/apt/sources.list.d/hatching.list
-echo 'APT::Install-Recommends "false";' >> /etc/apt/apt.conf.d/99norecommend
-echo 'APT::Install-Suggests "false";' >> /etc/apt/apt.conf.d/99norecommend
+# wget https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04/hatching.gpg -O /etc/apt/trusted.gpg.d/hatching.gpg
+#
+# echo deb https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04 ./ > /etc/apt/sources.list.d/hatching.list
+# echo 'APT::Install-Recommends "false";' >> /etc/apt/apt.conf.d/99norecommend
+# echo 'APT::Install-Suggests "false";' >> /etc/apt/apt.conf.d/99norecommend
 
 # Update apt to make the packages provided by Hatching available
 apt update
@@ -92,7 +85,7 @@ apt-key list
 apt-key del <key id>
 
 # refetch the signing key
-wget https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04/hatching.gpg -O /etc/apt/trusted.gpg.d/hatching.gpg
+# wget https://deploy.hatching.io/pkg/kymo/470feda2198c727c-22.04/hatching.gpg -O /etc/apt/trusted.gpg.d/hatching.gpg
 ```
 
 ## Route 1
