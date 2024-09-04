@@ -61,3 +61,12 @@ postgres=# \c example_db
 example_db=# GRANT ALL ON SCHEMA public TO example_user;
 
 ```
+
+## example
+
+```sql
+SELECT * FROM "Document" WHERE id = 'cm0nbn6500001ldrm5bjbk7ox'
+
+DELETE FROM "Document" WHERE id = 'cm0nbn6500001ldrm5bjbk7ox';
+
+```

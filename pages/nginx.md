@@ -138,7 +138,7 @@ location / {
 ```typescript {6-8} filename="api.ts"
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const query = req.query;
   const ipAddress: any = req.headers["x-forwarded-for"]
@@ -181,8 +181,12 @@ location /uploads/ {
 # 不然會遇到 403 Forbidden
 
 # change ownership
-# sudo usermod -a -G username groupname
-# sudo chown -R :groupname /home/xxx/yyy/public/zzz/
+
+# add user to group
+sudo usermod -a -G group username
+
+# change group onwership
+sudo chown -R :groupname /home/xxx/yyy/public/zzz/
 
 # or change /etc/nginx/nginx.conf
 # user www-data;
