@@ -203,8 +203,34 @@ sudo chown -R :groupname /home/xxx/yyy/public/zzz/
 
 # 開發中處理cors問題
 location /uploads/ {
-    add_header Access-Control-Allow-Origin *;
     alias /Users/xxx/xxx/js/xxx/uploadedFiles/;
+
+
+    # Allow CORS for all origins
+    add_header Access-Control-Allow-Origin * always;
+
+    # Allow common headers
+    add_header Access-Control-Allow-Headers "Authorization, Content-Type, Accept" always;
+
+    # Allow common methods
+    add_header Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE" always;
+
+    # Handle OPTIONS request (preflight)
+    if ($request_method = OPTIONS) {
+      add_header Access-Control-Allow-Origin * always;
+      add_header Access-Control-Allow-Headers "Authorization, Content-Type, Accept" always;
+      add_header Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE" always;
+      add_header Content-Length 0;
+      add_header Content-Type text/plain;
+      return 204; # No content
+    }
+    # Ensure CORS headers are applied for GET requests
+    if ($request_method = GET) {
+      add_header Access-Control-Allow-Origin * always;
+      add_header Access-Control-Allow-Headers "Authorization, Content-Type, Accept" always;
+      add_header Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE" always;
+    }
+
 }
 
 ```

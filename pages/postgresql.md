@@ -70,3 +70,54 @@ SELECT * FROM "Document" WHERE id = 'cm0nbn6500001ldrm5bjbk7ox'
 DELETE FROM "Document" WHERE id = 'cm0nbn6500001ldrm5bjbk7ox';
 
 ```
+
+## dump and restore
+
+```bash
+pg_dump -U user_name database_name > output_filename.log
+
+
+# scp your file
+
+CREATE DATABASE new_database_name;
+
+psql -U username -d new_database_name -f /path/to/dumpfile.sql
+
+# create user
+CREATE USER new_username WITH PASSWORD 'your_password';
+
+# 上面那個會留下history
+CREATE USER new_username;
+
+\password new_username
+
+# 權限要設定
+# db
+GRANT ALL PRIVILEGES ON DATABASE new_database_name TO new_username;
+
+# 看要不要設owner
+ALTER DATABASE new_database_name OWNER TO new_username;
+
+# grant access
+\c new_database_name
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO new_username;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO new_username;
+```
+
+## 如果遇到不能用user登入
+
+```bash
+/etc/postgresql/1x/main/pg_hba.conf
+
+local     all         all             peer # change this to md5
+local     all         all             md5 # like this
+
+sudo service postgresql restart
+```
+
+## reset postgres password
+
+```bash
+sudo -u postgres psql
+\password postgres
+```
