@@ -53,3 +53,9 @@ https://flowbite.com/docs/components/spinner/
   <span className="sr-only">Loading...</span>
 </div>
 ```
+
+## no ring
+
+```
+focus:outline-none focus:ring-0 focus:ring-ring focus:ring-offset-0
+```
