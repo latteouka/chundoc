@@ -2,6 +2,26 @@ https://gist.github.com/jjsquady/5399d6e1b23f501083a9c262d806e248
 
 這個部署 Next.js 到自己的主機會用到。
 
+### LLM model stream problem
+
+```nginx filename="/etc/nginx/sites-available/default" {11-13}
+# 解決stream mode卻一次吐一大段回來
+server {
+  location / {
+    proxy_pass http://localhost:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+
+    proxy_buffering off;
+    proxy_request_buffering off;
+    chunked_transfer_encoding on;
+  }
+}
+```
+
 ```bash
 # install
 sudo apt-get update
