@@ -254,3 +254,31 @@ location /uploads/ {
 }
 
 ```
+
+### Audio File Proxy
+
+```nginx filename="/etc/nginx/sites-available/default"
+
+# final target 192.168.1.43
+# 單純serve file，不要做別的事情
+
+location /uploads/ {
+  alias /srv/uploads/;
+}
+
+# Proxy 過去的那台 假設192.168.1.42
+
+location /uploads/ {
+  proxy_pass https://192.168.1.43/uploads/;
+
+  max_ranges 0;
+
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+
+  # Allow CORS for all origins
+  add_header Access-Control-Allow-Origin * always;
+}
+```

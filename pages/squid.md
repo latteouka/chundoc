@@ -2,9 +2,7 @@
 
 sudo vim /etc/squid/squid.conf
 
-```squid
-File path: /etc/squid/squid.conf
-
+```bash filename="/etc/squid/squid.conf"
 # http
 http_port 3128
 
