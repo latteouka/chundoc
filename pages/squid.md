@@ -30,6 +30,10 @@ cache_log /var/log/squid/cache.log
 
 ## upstream parent proxy
 
+表示我可以讓B Server設定upstream到A Server  
+C Server設定proxy到B Server  
+這樣C Server等於proxy到A Server
+
 ```bash filename="/etc/squid/squid.conf"
 # http
 http_port 3128
