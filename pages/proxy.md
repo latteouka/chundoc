@@ -70,3 +70,66 @@ export https_proxy=http://192.168.98.56:3128
 
 # 可以直接測試 pip install cats
 ```
+
+## Python program
+
+吃系統proxy
+
+```python
+import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+
+## proxy settings
+http_proxy = os.getenv("HTTP_PROXY")
+https_proxy = os.getenv("HTTPS_PROXY")
+
+if http_proxy:
+    os.environ["HTTP_PROXY"] = http_proxy
+    logging.info(f"HTTP_PROXY set to: {http_proxy}")
+else:
+    logging.info("HTTP_PROXY is not set.")
+
+if https_proxy:
+    os.environ["HTTPS_PROXY"] = https_proxy
+    logging.info(f"HTTPS_PROXY set to: {https_proxy}")
+else:
+    logging.info("HTTPS_PROXY is not set.")
+```
+
+.env
+
+```python
+
+# .env
+# HTTP_PROXY=http://your_http_proxy
+# HTTPS_PROXY=http://your_https_proxy
+
+import os
+import logging
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Proxy settings from .env file
+http_proxy = os.getenv("HTTP_PROXY")
+https_proxy = os.getenv("HTTPS_PROXY")
+
+if http_proxy:
+    os.environ["HTTP_PROXY"] = http_proxy
+    logging.info(f"HTTP_PROXY set to: {http_proxy}")
+else:
+    logging.debug("HTTP_PROXY is not set.")
+
+if https_proxy:
+    os.environ["HTTPS_PROXY"] = https_proxy
+    logging.info(f"HTTPS_PROXY set to: {https_proxy}")
+else:
+    logging.debug("HTTPS_PROXY is not set.")
+```
