@@ -48,6 +48,7 @@ DATABASE_URL='postgresql://user:password@ip:5432/dbname?schema=user'
 ```
 
 psql -U postgres
+sudo -u postgres psql template1
 
 postgres=# CREATE DATABASE xxx;
 
