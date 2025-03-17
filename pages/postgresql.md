@@ -61,6 +61,9 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE db_name TO user_name;
 postgres=# \c example_db
 example_db=# GRANT ALL ON SCHEMA public TO example_user;
 
+# for prisma migration
+ALTER ROLE your_db_user CREATEDB;
+
 ```
 
 ## example
