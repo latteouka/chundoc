@@ -13,3 +13,16 @@ sudo fc-cache -fv
 fc-list :lang=zh
 
 ```
+
+### 怎樣處理標楷體
+
+```
+# 自己想辦法用到kaiu.ttf
+scp kaiu.ttf xxx@target.com:~/kaiu.ttf
+
+# copy to
+/usr/share/fonts/truetype/
+
+# 刷新字型快取
+fc-cache -fv
+```
