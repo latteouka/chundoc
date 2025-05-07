@@ -13,7 +13,7 @@ http_port 3128
 # Access Control List (ACL) to allow local network
 acl localhost src 127.0.0.1
 acl localnet src 192.168.98.0/24
-acl address src 192.168.98.1, 192.168.98.2
+acl address src 192.168.98.1 192.168.98.2
 
 # Allow access from the local network
 http_access allow localhost
