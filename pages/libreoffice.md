@@ -1,3 +1,7 @@
+# libreoffice
+
+## 安裝
+
 ```
 sudo apt install libreoffice
 
@@ -14,7 +18,7 @@ fc-list :lang=zh
 
 ```
 
-### 怎樣處理標楷體
+## 怎樣處理標楷體
 
 ```
 # 自己想辦法用到kaiu.ttf

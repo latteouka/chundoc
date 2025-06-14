@@ -1,4 +1,24 @@
-[puppeteer](https://pptr.dev/)
+## Ubuntu
+
+```bash
+sudo apt-get install chromium-browser
+
+# 22
+sudo apt-get install libx11-xcb1 libxcomposite1 libasound2 libatk1.0-0 \
+libatk-bridge2.0-0 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 \
+libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 \
+libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
+libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
+libxss1 libxtst6
+
+# 24: libasound2t64不一樣
+sudo apt-get install libx11-xcb1 libxcomposite1 libasound2t64 libatk1.0-0 \
+libatk-bridge2.0-0 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 \
+libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 \
+libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
+libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
+libxss1 libxtst6
+```
 
 ## puppeteer-core
 
@@ -91,7 +111,7 @@ cursor = await this.page.$x("/html/body/table[1]/tbody/tr[3]/td[2]");
 if (cursor.length === 1) {
   const phoneNumber = await this.page.evaluate(
     (el) => el.textContent,
-    cursor[0]
+    cursor[0],
   );
   // deal with the result
 } else {
@@ -129,7 +149,7 @@ const pageTarget = this.page.target();
 await result[0].click();
 
 const newTarget = await this.browser.waitForTarget(
-  (target) => target.opener() === pageTarget
+  (target) => target.opener() === pageTarget,
 );
 const newPage = await newTarget.page();
 

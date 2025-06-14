@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import palettes from "../data/colors";
 import style from "./palettes.module.scss";
-import gsap from "gsap";
 import { useKeyStore } from "../store/keyStore";
-import { toast } from "react-hot-toast";
+import { toast } from "sonner";
 
 const Palletes = () => {
   const { setIsPress } = useKeyStore();

@@ -1,7 +1,3 @@
-https://gist.github.com/jjsquady/5399d6e1b23f501083a9c262d806e248
-
-這個部署 Next.js 到自己的主機會用到。
-
 ### LLM model stream problem
 
 ```nginx filename="/etc/nginx/sites-available/default" {11-13}
@@ -67,7 +63,7 @@ certbot --force-renewal --preferred-chain "ISRG Root X1" renew
 ```nginx filename="ssl-params.conf"
 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 ssl_prefer_server_ciphers on;
-ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
+ssl_ciphers 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256';
 ssl_ecdh_curve secp384r1;
 ssl_session_cache shared:SSL:10m;
 ssl_session_tickets off;

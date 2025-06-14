@@ -1,4 +1,4 @@
-# Nvidia driver install
+## Nvidia driver install
 
 ```bash
 # check gpu
