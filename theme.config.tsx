@@ -21,19 +21,15 @@ const config: DocsThemeConfig = {
         <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
 
         {/* 載入 gtag script */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-593N6RCCF2"
-          strategy="afterInteractive"
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-593N6RCCF2" />
         {/* 初始化 GA */}
         <Script id="ga-init" strategy="afterInteractive">
           {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-593N6RCCF2', {
-            page_path: window.location.pathname,
-          });
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-593N6RCCF2');
         `}
         </Script>
       </>
