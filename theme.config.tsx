@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
@@ -19,15 +20,22 @@ const config: DocsThemeConfig = {
         <title>Yi Chun</title>
         <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-593N6RCCF2"></script>
-        <script>
+        {/* 載入 gtag script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-593N6RCCF2"
+          strategy="afterInteractive"
+        />
+        {/* 初始化 GA */}
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-        
-          gtag('config', 'G-593N6RCCF2');
-        </script>
+          gtag('config', 'G-593N6RCCF2', {
+            page_path: window.location.pathname,
+          });
+        `}
+        </Script>
       </>
     );
   },
