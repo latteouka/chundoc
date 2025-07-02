@@ -1,8 +1,0 @@
-{
-  "crons": [
-    {
-      "path": "/api/shadow/latestShadowTrial",
-      "schedule": "0 10 * * *"
-    }
-  ]
-}

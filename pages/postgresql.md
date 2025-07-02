@@ -45,23 +45,26 @@ DATABASE_URL='postgresql://user:password@ip:5432/dbname?schema=user'
 
 ## 如何新增資料庫
 
-```
-
+```bash
+# 使用psql連線進入管理者帳號
 psql -U postgres
 sudo -u postgres psql template1
 
+# 建立資料庫與使用者
 postgres=# CREATE DATABASE xxx;
-
 postgres=# CREATE USER xxx;
-
 postgres=# ALTER USER xxx WITH PASSWORD 'new_password';
 
+# 給權限（全給）
 postgres=# GRANT ALL PRIVILEGES ON DATABASE db_name TO user_name;
+# 給權限（連線而已）
+postgres=# GRANT CONNECT ON DATABASE db_name TO user_name;
 
+# 切換進資料庫，授權schema權限（不然會無法進行任何查詢or寫入）
 postgres=# \c example_db
 example_db=# GRANT ALL ON SCHEMA public TO example_user;
 
-# for prisma migration
+# For prisma migration
 ALTER ROLE your_db_user CREATEDB;
 
 ```
